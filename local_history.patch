@@ -1,0 +1,19 @@
+Index: PerceptronNetwork.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/PerceptronNetwork.py b/PerceptronNetwork.py
+--- a/PerceptronNetwork.py	(date 1624378386087)
++++ b/PerceptronNetwork.py	(date 1624378386087)
+@@ -55,8 +55,8 @@
+             print("Epoch", epoch)
+             for x_batch, y_batch in handler.iterate_mini_batches(batch_size, shuffle=True):
+                 for i in range(x_batch.shape[0]):
+-                    output = self.forward(x_batch[i].reshape(-1, 1))
+-                    self.backward(y_batch[i].reshape(-1, 1), output)
++                    output = self.forward(x_batch[i])
++                    self.backward(y_batch[i], output)
+             self.plot_evaluation_metrics(handler, metric=metric)
+         self.evaluation_plot.show()
+ 
